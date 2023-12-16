@@ -1,0 +1,93 @@
+body {
+    background-color:  #f4f4f4;
+    color: #555;
+    font: normal 16px Arial, Helvetica, sans-serif;
+    line-height: 1.6em;
+    margin: 0;
+    background-image: url('../img/lauren-mancke-aOC7TSLb1o8-unsplash.jpg');
+    padding-top: 20px;
+}
+
+.container {
+    background-color:  #f4f4f4;
+    width: 80%;
+    margin: auto; 
+    padding: 20px 0;
+    border-radius: 10px;   
+}
+
+.navbar {
+    border-radius: 10px;
+}
+
+#navheader, #foot {
+    background: none;
+}
+
+h2 {
+    padding-left: 20px;
+}
+
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+}
+
+/* HERO SECTION */
+
+.carousel {
+    width: 50%;
+    margin: auto;;
+}
+
+/* SKILLS SECTION */
+
+.skills-list ul {
+    padding-left: 30px;
+    list-style: none;
+    list-style-image: url('../images/folder.png');
+}
+
+/* PROJECTS SECTION */
+.accordion {
+    padding: 0 20px;
+}
+
+/* CONTACT ME SECTION */
+
+#contact {
+    border: #dee2e6 solid 2px;
+    width: 95%;
+    background-color: #fff;
+}
+
+.contact-form label {
+    display: block;
+}
+
+.contact-form .form-group {
+    padding: 20px;
+}
+
+.contact-form input[type="text"], .contact-form textarea {
+    padding: 8px;
+    width: 100%}
+
+.contact-form .submit {
+    padding-left: 20px;
+}
+
+/* INFO SECTION */
+
+.info {
+    padding: 20px;
+}
+
+/* BLOG SECTION */
+.post, aside   {
+    padding: 20px;
+}

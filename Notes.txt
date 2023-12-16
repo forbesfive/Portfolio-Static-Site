@@ -1,0 +1,99 @@
+Steps for setting up 11ty - JAM stack generator can do all this for you!
+
+Task 1 - Check you have node installed
+    Check node.js is installed
+    node -v
+    npm -v
+    Google node download 
+    https://nodejs.org/en/download/
+    - follow the wizard
+
+Task 2 - Set up your own 11ty site
+    Create a new folder and open it in VSCode - then:
+    In our terminal run:
+    npm init (**press enter for all the prompts**)
+    npm install @11ty/eleventy
+
+    Add a .gitignore file in the root
+        Inside .gitignore file add following
+        /node_modules/
+
+Task 3 - Add our scripts 
+    Open your package.json - add your start and build scripts
+
+        Paste following scripts into package.json
+        "start": "npx @11ty/eleventy --serve",
+        "build": "npx @11ty/eleventy",
+
+        package.json code should now read:
+        ..
+        "scripts": {
+        "start": "npx @11ty/eleventy --serve",
+        "build": "npx @11ty/eleventy",
+        "test": "echo \"Error: no test specified\" && exit 1"
+        },
+        ..
+    
+    Create a .eleventy.js file in the root - add code below.
+
+        module.exports = function(eleventyConfig) {
+            // Set custom directories for input, output, includes, and data
+            return {
+            dir: {
+                input: "src",
+                includes: "_includes",
+                data: "_data",
+                output: "_site"
+            }
+            };
+        };
+
+    Run npm start in your terminal
+        runs start script in package.json
+        starts server e.g. [11ty] Server at http://localhost:8080/
+        Serving up a file
+        Clicking on link opens page in browser - displays Error 'Cannot GET /' at this stage
+        
+        To stop server running - terminal type CTRL + c - Windows y to prompts until back at prompt
+
+Task 4 - Create a layout
+    Create a src folder in root
+
+    In our src folder, create another folder called _includes
+    Now create a file called default.njk - nunjucks - templating language - place variable in templating language and mix it with html
+        default is the base layout - what you will want to see on all your website pages
+           <! -- include CSS, Navbar with logo, footer copyright symbols & terms and conditions--> 
+        Use emmet in VSCode to quickly give you some HTML boilerplate code (!)
+            i.e. click on Plain Text at the bottom of VSCode -  type html on box that opens
+        Add this code in the body tag (): (allows us to inject code into our layouts)
+        {{ content | safe }}
+
+    Create a index.njk in src folder
+    Front matter - variable, configuration for a particular file
+
+    Into _includes add the following
+    ---
+    layout: "default.njk"
+    ---
+
+    Browser at server address from above i.e. http://localhost:8080/ will show text from default.njk 'Hello from default layout'
+
+Additional
+    Add Bootstrap to default.njk as per previous learning
+        from Bootstrap Get Started
+            paste <link...> in head
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+            paste <script... at bottom of body
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    Create further layouts *.njk files in src
+    
+    Create your content
+
+Task 5 - let’s push our site to Github!
+    - Create a new repository in Github
+    - Copy the instructions from ‘Create a new repository on the command line’
+    - In your terminal - navigate to the root of your 11ty blog
+    - Paste the instructions you copied in
+    - Check Github to see if your code is in your new repository
+

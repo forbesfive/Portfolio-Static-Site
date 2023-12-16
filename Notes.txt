@@ -94,6 +94,25 @@ Task 5 - let’s push our site to Github!
     - Create a new repository in Github
     - Copy the instructions from ‘Create a new repository on the command line’
     - In your terminal - navigate to the root of your 11ty blog
-    - Paste the instructions you copied in
+    - Paste the instructions you copied in - **change 'git add readme.txt' to 'git add .' i.e. all files
     - Check Github to see if your code is in your new repository
+
+    note - if you have issues with github e.g. origin already exists issue following  in terminal
+         - 'git push origin main -f' - force push
+
+Task 6 - Set up our Cloud Hosting!
+    Log in to Netlify account - https://www.netlify.com/
+    in netlify - basic cloud level software
+        - select sites from menu on left
+        - click 'Add new site' -> Import an existing project
+        - Select the option to deploy from Github
+        - Choose the repository from the list
+            - Branch to deplay = main
+            - don't have to select anything else
+            - click 'Deploy <xx>'
+    Every time you push to GitHub netlify will automatically update the site
+
+    Site deployed - link available
+        - https://tranquil-beignet-917a83.netlify.app
+
 

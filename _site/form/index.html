@@ -68,7 +68,7 @@
 <section class="container">
     <h2>Contact Me Section</h2>
     <div class="container" id="contact">
-        <form class="contact-form" id="contact-form" name="contact-form" netlify>
+        <form action="" class="contact-form" id="contact-form" name="contact-form" netlify>
             <div class="form-group">
                 <label for="first-name">First Name: </label>
                 <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
@@ -85,6 +85,15 @@
                 <label for="message">Message: </label>
                 <textarea name="message" id="message" name="message" placeholder="Type your message here" required></textarea>
             </div>
+            <div class="form-group">
+                <fieldset>
+                    <legend>Terms & Conditions</legend>
+                    <input type="checkbox" id="terms" name="terms" value="agree" required> I agree to the 
+                    <div class="popup" onclick="myFunction()">terms and conditions
+                        <span class="popuptext" id="myPopup">These are the dummy terms and conditions of use of this contact form</span>
+                    </div>
+                </fieldset>
+            </div>
             <div class="submit">
                 <button type='submit'>Submit</button>
                 <!-- <input class="submit-button" type="submit" value="Submit" name="submit"> -->
@@ -100,16 +109,26 @@
               let surname = document.getElementById('surname').value;
               let email = document.getElementById('email').value;
               let message = document.getElementById('message').value;
+              let terms = document.getElementById('terms').value
     
-              console.log('FirstName:', firstName, 'Surname:', surname, 'Email:', email, 'Message:', message);
+              console.log('FirstName:', firstName, 'Surname:', surname, 'Email:', email, 'Message:', message, 'terms', terms);
     
               firstName.value = '';
               surname.value = '';
               email.value = '';
               message.value = '';
+              terms.value = '';
 
             });
           </script> -->
+
+        <script>
+            // When the user clicks on <div>, open the popup
+            function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+            }
+            </script>
     </div>
 </section>
 

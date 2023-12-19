@@ -8,6 +8,10 @@ body {
     padding-top: 20px;
 }
 
+/* h2 {
+    color: red;
+} */
+
 .container {
     background-color:  #f4f4f4;
     width: 80%;
@@ -90,4 +94,20 @@ header, footer {
 /* BLOG SECTION */
 .post, aside   {
     padding: 20px;
+}
+
+/* FOOTER */
+
+.foot-link {
+    /* border: 2px solid #fff; */
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.foot-link:hover {
+    background-color: rgb(29, 29, 133);
+    color: #fff;
 }

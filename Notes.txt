@@ -11,15 +11,16 @@ Task 1 - Check you have node installed
 Task 2 - Set up your own 11ty site
     Create a new folder and open it in VSCode - then:
     In our terminal run:
+   
     npm init (**press enter for all the prompts**)
     npm install @11ty/eleventy
 
-    Add a .gitignore file in the root
+    Add a '.gitignore' file in the root
         Inside .gitignore file add following
         /node_modules/
 
 Task 3 - Add our scripts 
-    Open your package.json - add your start and build scripts
+    Open your 'package.json' - add your start and build scripts
 
         Paste following scripts into package.json
         "start": "npx @11ty/eleventy --serve",
@@ -34,7 +35,7 @@ Task 3 - Add our scripts
         },
         ..
     
-    Create a .eleventy.js file in the root - add code below.
+    Create a '.eleventy.js' file in the root - add code below.
 
         module.exports = function(eleventyConfig) {
             // Set custom directories for input, output, includes, and data
@@ -56,22 +57,26 @@ Task 3 - Add our scripts
         
         To stop server running - terminal type CTRL + c - Windows y to prompts until back at prompt
 
-Task 4 - Create a layout
-    Create a src folder in root
+Task 4 - Create a layout (*Note - take care with VSCode Explorer as it is not clear what the file structure is in the src/_include folders!)
+    Create a 'src' folder in root
 
-    In our src folder, create another folder called _includes
-    Now create a file called default.njk - nunjucks - templating language - place variable in templating language and mix it with html
+    In our 'src' folder, create another folder called '_includes'
+
+    in '_includes' folder create a file called 'default.njk' - nunjucks - templating language - place variable in templating language and mix it with html
         default is the base layout - what you will want to see on all your website pages
            <! -- include CSS, Navbar with logo, footer copyright symbols & terms and conditions--> 
-        Use emmet in VSCode to quickly give you some HTML boilerplate code (!)
+        
+    Use emmet in VSCode to quickly give you some HTML boilerplate code (!)
             i.e. click on Plain Text at the bottom of VSCode -  type html on box that opens
         Add this code in the body tag (): (allows us to inject code into our layouts)
-        {{ content | safe }}
+        
+	{{ content | safe }}
 
-    Create a index.njk in src folder
-    Front matter - variable, configuration for a particular file
+    In src folder create a 'index.njk'
+    	Front matter - variable, configuration for a particular file
 
-    Into _includes add the following
+    Into 'index.njk' file add the following code
+
     ---
     layout: "default.njk"
     ---

@@ -1,0 +1,52 @@
+---
+layout: "default.njk"
+---
+
+<hr>
+<!-- CONTACT ME SECTION -->
+<section class="container">
+    <h2>Contact Me Section</h2>
+    <div class="container" id="contact">
+        <form class="contact-form" id="contact-form" action="" netlify>
+            <div class="form-group">
+                <label for="first-name">First Name: </label>
+                <input type="text" id="first-name" placeholder="Enter your first name" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname: </label>
+                <input type="text" id="surname" placeholder="Enter your surname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="text" id="email" placeholder="Enter your email address" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message: </label>
+                <textarea name="message" id="message" placeholder="Type your message here" required></textarea>
+            </div>
+            <div class="submit">
+                <input class="submit-button" type="submit" value="Submit" name="submit">
+            </div>
+        </form>
+        <!-- <script>
+            let loginForm = document.getElementById('contact-form');
+    
+            loginForm.addEventListener('submit', (e) => {
+              e.preventDefault();
+    
+              let firstName = document.getElementById('first-name').value;
+              let surname = document.getElementById('surname').value;
+              let email = document.getElementById('email').value;
+              let message = document.getElementById('message').value;
+    
+              console.log('FirstName:', firstName, 'Surname:', surname, 'Email:', email, 'Message:', message);
+    
+              firstName.value = '';
+              surname.value = '';
+              email.value = '';
+              message.value = '';
+
+            });
+          </script> -->
+    </div>
+</section>

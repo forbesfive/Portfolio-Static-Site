@@ -73,19 +73,102 @@
 		<article class="post">
 			<h3>Tip Calculator</h3>
 			<small>Posted by Jonathan on Jan 02 2024</small>
-			<p>The takeaway task for session 9. Intro to JS - Programming Concepts. This task introduces the use of JavaScript to add dynamic interactions with web pages. I initially created a Script tag into my index.html page and initiated variables to take the value of the bill via a prompt and calculate the value of the tip from a fixed percentage of 25% using the document.write method to output the total bill. I checked using the typeof operator that I was dealing with numbers at all times and utilised the toFixed method to round the output as per the task instructions. As I had a number of lines of code in my script tag, I moved the JavaScript to a separate file and linked to this from the html head. Unfortunately, I experienced problems with document.write in a separate JS file within VSCode, with the browser console throwing errors. I moved my code to CodePen and did not experience this issue there. I now made further changes to the code, changing the input method to a input field within the webpage with a submit button initiating a JS function to calculate the tip from the input bill value. Once working, I transferred the code back to VSCode and did not experience any further issues with document.write method, all seemed to be working as expected. </p>
+			<p>
+				The takeaway task for session 9. Intro to JS - Programming Concepts. This task introduces the use of JavaScript to add dynamic interactions with web pages. I initially created a Script tag into my index.html page and initiated variables to take the value of the bill via a prompt and calculate the value of the tip from a fixed percentage of 25% using the document.write method to output the total bill. I checked using the typeof operator that I was dealing with numbers at all times and utilised the toFixed method to round the output as per the task instructions. As I had a number of lines of code in my script tag, I moved the JavaScript to a separate file and linked to this from the html head. Unfortunately, I experienced problems with document.write in a separate JS file within VSCode, with the browser console throwing errors. I moved my code to CodePen and did not experience this issue there. I now made further changes to the code, changing the input method to a input field within the webpage with a submit button initiating a JS function to calculate the tip from the input bill value. Once working, I transferred the code back to VSCode and did not experience any further issues with document.write method, all seemed to be working as expected. 
+			</p>
 			<a href="#">Read More</a>
 		</article>
 		
 		<article class="post">
-			<h3>Blog Post Two</h3>
-			<small>Posted by Brad on July 17</small>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<h3>Intro to JS - Functions and Control Flow</h3>
+			<small>Posted by Jonathan on Jan 02 2024</small>
+			<p>
+				In this session learners were taught about how to write a function in Javascript. The learners also have to call the function to make it run. They were introduced to control flow and how to use logic inside of a function to return an output.
+				<h6>
+					Task 1 - Write a function that outputs a sentence. Then invoke/use that function.
+				</h6>
+				<samp>
+					function sentence() {
+						console.log('This is a sentence.')
+					}<br>
+
+					sentence();
+				</samp>
+				<h6>
+					Task 2 - Write a simple program to combine a first name and a last name inside a function. Then update the function to accept a first and last name as arguments.
+				</h6>
+				<samp>
+					function name(first, last) {
+					console.log("Full Name: " + first + " " + last);
+					}<br>
+
+					name('Jim', 'Argument');
+				</samp>
+				<h6>
+					Task 3 - Add a return statement to your 'name' function. Use that function to set the value of a variable.
+				</h6>
+				<samp>
+					function name(first, last) {
+					return "Full Name: " + first + " " + last;
+					}
+	
+					let fullName = name('Jim', 'Return')<br>
+	
+					console.log(fullName);
+	
+				</samp>
+				<h6>
+					Task 3 function as Arrow function
+				</h6>
+				<samp>
+					const name = (first, last) => "Full Name: " + first + " " + last;<br>
+	
+					console.log(name('Jim', 'Arrow'));
+				</samp>
+				<h6>
+					task 4.1 - Make a variable called "temperature". Write some code that tells you to put on a coat if it is less than 50.
+				</h6>
+				<samp>
+					let temperature = 49;
+	
+					if (temperature < 50) {
+					console.log("Put on a coat")
+					}
+				</samp>
+				<h6>
+					Task 4.2 - If it's less than 50 degrees, “wear a coat.” If it's less than 30 degrees, “wear a coat and a hat.” If it's less than 0 degrees, “stay inside.” Otherwise, “just pants and vest is fine.”
+				</h6>
+				<samp>
+					let temperature = 60;
+	
+					if (temperature < 0) {
+					console.log("Stay inside.");<br>
+					} else if (temperature < 30) {
+					console.log("Wear a coat and a hat.");<br>
+					} else if (temperature < 50) {
+					console.log("Wear a coat.");<br>
+					} else {
+					console.log("Just pants and vest is fine.")
+					}
+				</samp>
+				<h6>
+					Task 4.3 - Add a logical operator to your ‘Shall I wear a coat?’ program
+				</h6>
+				<samp>
+					let temperature = 25;
+					let hat = true;
+	
+					if (temperature < 0) {
+					console.log("Stay inside.");<br>
+					} else if (temperature < 30 && hat) {
+					console.log("Wear a coat and a hat.");<br>
+					} else if (temperature < 50) {<br>
+					console.log("Wear a coat.");<br>
+					} else {
+					console.log("Just pants and vest is fine.")
+					}
+				</samp>
+			</p>
 			<a href="#">Read More</a>
 		</article>
 		

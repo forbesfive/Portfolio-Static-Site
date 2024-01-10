@@ -166,3 +166,9 @@ header, footer {
     from {opacity: 0;}
     to {opacity:1 ;}
   }
+
+  samp {
+    display: block;
+    margin-left: 10%;
+    padding: 2rem;
+  }

@@ -81,7 +81,7 @@
 		
 		<article class="post">
 			<h3>Intro to JS - Functions and Control Flow</h3>
-			<small>Posted by Jonathan on Jan 02 2024</small>
+			<small>Posted by Jonathan on Jan 10 2024</small>
 			<p>
 				In this session learners were taught about how to write a function in Javascript. The learners also have to call the function to make it run. They were introduced to control flow and how to use logic inside of a function to return an output.
 				<h6>
@@ -162,7 +162,7 @@
 					console.log("Stay inside.");<br>
 					} else if (temperature < 30 && hat) {
 					console.log("Wear a coat and a hat.");<br>
-					} else if (temperature < 50) {<br>
+					} else if (temperature < 50) {
 					console.log("Wear a coat.");<br>
 					} else {
 					console.log("Just pants and vest is fine.")
@@ -172,6 +172,198 @@
 			<a href="#">Read More</a>
 		</article>
 		
+		<article class="post">
+			<h3>Practicals - Intro to JS - Functions and Control Flow</h3>
+			<small>Posted by Jonathan on Jan 17 2024</small>
+			<small>
+				<h6>
+				Task 1 - Create a function that is able to return a percentage of a number. For example you want to know  what 30% of 135 is.<br>
+				<br>
+				<ol>
+					<li>Create a function named percentageCalculator</li>
+					<li>Add 2 arguments for “number” and “percentage”</li>
+					<li>Do the maths required to work out a percentage with the arguments</li>
+					<li>Return the result of the maths</li>
+					<li>Console.log the returned value</li>
+				</ol>
+			</h6>
+			<p>
+				<samp>
+					function percentageCalculator (number, percentage) {<br>
+					  return number * percentage / 100;<br>
+					}<br>
+					<br>
+					console.log(percentageCalculator(135, 30));<br>
+					<br>
+					/* Arrow function */<br>
+					percentageCalculator = (number, percentage) => number * percentage / 100;<br>
+					<br>
+					console.log(percentageCalculator(135, 30));<br>
+					<br>
+					/* Using variables */<br>
+					const number = 135<br>
+					const percentage = 30<br>
+					<br>
+					percentageCalculator = (number, percentage) => number * percentage / 100;<br>
+					<br>
+					console.log(percentageCalculator(number, percentage));<br>
+					<br>
+					/* Make dynamic by UI '+ ensures that string from UI is a number' */<br>
+					const number = +prompt('What number')<br>
+					const percentage = +prompt('what Percentage')<br>
+					<br>
+					percentageCalculator = (number, percentage) => number * percentage / 100;<br>
+					<br>
+					const result = percentageCalculator(number, percentage);<br>
+					<br>
+					alert(`${percentage}% of ${number} is ${result}` )<br>
+				</samp>
+				<h6>
+					Task 2 - Customers can order 3 types of drink in 3 sizes. Cola, Lemonade and Orangeade Small, Medium and Large The button they press have the values “cola”,”lemon”,”orange” Create a function that will return the message “You have ordered a {size} of {softDrinkLabel}<br>
+					<br>
+					<ol>
+						<li>Create a function named drinkOrder</li>
+						<li>Add 2 arguments for “size” and “buttonName”</li>
+						<li>Use a switch statement to determine where the functional code needs to be written</li>
+						<li>Create a message in each case statement to be returned.</li>
+						<li>Console.log the returned message.</li>
+					</ol>
+					<ul>
+						<li>
+							Additional look at arrays - make dynamic
+						</li>
+					</ul>
+				</h6>
+				<samp>
+					 let buttonName = 'orange'<br>
+					 let size = 'Small'<br>
+					 <br>
+					 function drinkOrder (buttonName, size) {<br>
+					   switch (buttonName) {<br>
+						 case 'cola':<br>
+							 return `You have ordered a ${size} of Cola`<br>
+						 case 'lemon':<br>
+							 return `You have ordered a ${size} of Lemonade`<br>
+						 case 'orange':<br>
+							 return `You have ordered a ${size} of Orangeade`<br>
+					   }<br>
+					 }<br>
+					 console.log(drinkOrder(buttonName, size))<br>
+					 <br>
+					 /* Make dynamic by UI */<br>
+					 const arrSize = ["Small","Medium","Large"];<br>
+					 const arrButtonName = ["cola","lemon","orange"]<br>
+					 <br>
+					 /* Ensure drink size entry capitalised */<br>
+					 function titleCase(str) {<br>
+					   var splitStr = str.toLowerCase().split(' ');<br>
+					   for (var i = 0; i < splitStr.length; i++) {<br>
+						 splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);<br>
+					   }<br>
+					   return splitStr.join(' ');<br>
+					 }<br>
+					 <br>
+					 let buttonName<br>
+					 let size<br>
+					 <br>
+					 /* Prompt for drink type until correct entry */<br>
+					 do{<br>
+					  /* Ensure buttonName is lowercase */<br>
+					  buttonName = prompt('What type of drink: cola, lemon, orange').toLowerCase()<br>
+					} while (arrButtonName.indexOf(buttonName) === -1);<br>
+					<br>
+					/* Prompt for drink size until correct entry */<br>
+					do{<br>
+					  size = titleCase(prompt('What size of drink: Small, Medium and Large'))<br>
+					} while (arrSize.indexOf(size) === -1);<br>
+					<br>
+					function drinkOrder (size, buttonName) {<br>
+					  switch (buttonName) {<br>
+						case 'cola':<br>
+							return `You have ordered a ${size} of Cola`<br>
+						case 'lemon':<br>
+							return `You have ordered a ${size} of Lemonade`<br>
+						case 'orange':<br>
+							return `You have ordered a ${size} of Orangeade`<br>
+					  }<br>
+					}<br>
+					console.log(drinkOrder(size, buttonName))<br>
+				</samp>
+				<h6>
+					Task 3 - We need to create a function capable of using the addition, subtraction, multiply, divider or modulus operator on 2 numbers provided.
+				</h6>
+				<samp>
+					let number1 = 7<br>
+					let number2 = 5<br>
+					let operator = '%'<br>
+					<br>
+					function calculator (number1, number2, operator) {<br>
+					  switch (operator) {<br>
+						case '+':<br>
+						  return number1 + number2<br>
+						  // break; don't need as return breaks out<br>
+						case '-':<br>
+						  return number1 - number2<br>
+						case '*':<br>
+						  return number1 * number2<br>
+						case '/':<br>
+						  return number1 / number2<br>
+						case '%':<br>
+						  return number1 % number2<br>
+					  }<br>
+					}<br>
+					<br>
+					let value = calculator(number1, number2, operator)<br>
+					<br>
+					console.log(`${number1} ${operator} ${number2} = ${value}`)<br>
+					<br>
+					/* Make dynamic by UI */<br>
+					/* Extra work - Think how you could add validation to this script */<br>
+					const arrOperator = ["+","-","*","/","%"];<br>
+					<br>
+					/* Prompt for input until a number is entered */<br>
+					function validate (argument) {<br>
+					  let number<br>
+					do{<br>
+					  number = Number(prompt(`Enter ${argument}`))<br>
+					} while (!(!Number.isNaN(number)));<br>
+					  return number<br>
+					}<br>
+					<br>
+					let number1 = validate("number1")<br>
+					let operator<br>
+					<br>
+					/* Prompt for input until a correct operator is entered */<br>
+					do{<br>
+					  operator = prompt('Enter operator: +, -, *, /, %')<br>
+					} while (arrOperator.indexOf(operator) === -1);<br>
+					<br>
+					let number2 = validate("number2")<br>
+					<br>
+					function calculator (number1, number2, operator) {<br>
+					  switch (operator) {<br>
+						case '+':<br>
+						  return number1 + number2<br>
+						//  break; don't need as return breaks out<br>
+						case '-':<br>
+						  return number1 - number2<br>
+						case '*':<br>
+						  return number1 * number2<br>
+						case '/':<br>
+						  return number1 / number2<br>
+						case '%':<br>
+						  return number1 % number2<br>
+					  }<br>
+					}<br>
+					<br>
+					let value = calculator(number1, number2, operator)<br>
+					<br>
+					console.log(`${number1} ${operator} ${number2} = ${value}`)<br>
+				</samp>
+			</p>
+			<a href="#">Read More</a>
+		</article>
+
 		<article class="post">
 			<h3>Blog Post Three</h3>
 			<small>Posted by Brad on July 17</small>

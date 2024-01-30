@@ -365,8 +365,8 @@
 		</article>
 
 		<article class="post">
-			<h3>Blog Post Three</h3>
-			<small>Posted by Brad on July 17</small>
+			<h3>Blog Post Five</h3>
+			<small>Posted by Jonathan on Jan 30 2024</small>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -375,6 +375,112 @@
 			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 			<a href="#">Read More</a>
 		</article>
+
+		<article class="post">
+			<h3>Intro to JS - Loops, Arrays & Objects</h3>
+			<small>Posted by Jonathan on Jan 30 2024</small>
+			<p>
+				In this session learners had loops explained to them. Learners were also introduced to 2 data types in detail (arrays & objects). Some simple tasks were worked through to demonstrate when they will be used and how.
+				<h6>
+					Task 1 - Write a loop that outputs the 7 times table, from 7 x 1 = 7 to 7 x 12 = 84<br>
+				</h6>
+				<samp>
+					for ( let i = 1; i <= 12; i++) {<br>
+						console.log(`\n -------- \nThe ${i} times table \n`)<br>
+						for ( let j = 1; j <=12; j++) {<br>
+						console.log(`${i} x ${j} = ${i * j}`)<br>
+						}<br>
+					}<br>
+				</samp>
+				<h6>
+					Task 2
+					<ol>
+						<li>Create an array of your favourite foods.</li>
+						<li>Print some of them to the screen</li> 
+					</ol>
+				</h6>
+				<samp>
+					const foods = ['Fish & Chips', 'Pizza', 'Chicken Tikka Masala']<br>
+					console.log(foods[0]);<br>
+					console.log(foods[2]);<br>
+				</samp>
+				<h6>
+					Task 3 - Use a for loop to print a list of all your favourite foods
+				</h6>
+				<samp>
+					/*for loop with a counter */<br>
+					const foods = ['Fish & Chips', 'Pizza', 'Chicken Tikka Masala']<br>
+					
+					for (let i = 0; i < foods.length; i++) {<br>
+					  console.log(foods[i])<br>
+					}<br>
+					<br>
+					/* for...of syntax */<br>
+					const foods = ['Fish & Chips', 'Pizza', 'Chicken Tikka Masala']<br>
+					
+					for (const food of foods) {<br>
+					  console.log(food)<br>
+					}<br>
+				</samp>
+				<h6>
+					Task 4 - Create an object to hold information on your favourite recipe. Then display the properties on screen.<br>
+					Bonus Points: Create a loop to list all the ingredients and directions.
+				</h6>
+				<samp>
+					const recipe = {<br>
+					title: 'Hot Chocolate Fudge',<br>
+					servings: 4,<br>
+					ingredients: [<br>
+						'Chocolate Chips',<br>
+						'Heavy Cream',<br>
+						'Condensed Milk',<br>
+						'Vanilla Extract',<br>
+						'White Chocolate Chips',<br>
+						'Miniature Marshmallows'],<br>
+					directions: [<br>
+						'Line an 8-inch-square baking pan with wax paper or foil, and coat with non-stick spray.',<br>
+						'In a microwave-safe bowl, combine the dark chocolate chips, heavy cream and half of the sweetened condensed milk. Microwave the dark chocolate mixture in 20-second intervals, stirring in between each interval, until the chocolate is melted.', 'Add the vanilla extract to the dark chocolate mixture and stir well until smooth.',<br>
+						'Transfer the dark chocolate mixture into the prepared pan and spread into an even layer.',<br>
+						'In a separate bowl, combine the white chocolate chips with the remaining half of the sweetened condensed milk. Microwave the white chocolate mixture in 20-second intervals, stirring in between each interval, until the chocolate is melted.',<br>
+						'Evenly spread the white chocolate mixture on top of dark chocolate layer.',<br>
+						'Top the chocolate layers with the Mallow Bits or miniature marshmallows, and gently press them down.',<br>
+						'Refrigerate for 4 hours, or until set.',<br>
+						'Remove the fudge and wax paper from the pan. Carefully peel all of the wax paper from the fudge.',<br>
+						'Cut the fudge into bite-sized pieces and serve.']<br>
+						};<br>
+						<br>
+					/* display the properties on screen. */<br>
+					console.log(recipe.title);<br>
+					console.log(recipe.servings);<br>
+					console.log(recipe.ingredients);<br>
+					console.log(recipe.directions);<br>
+					<br>
+					/* Bonus Points: Create a loop to list all the ingredients and directions. */<br>
+					console.log('\nIngredients:');<br>
+					for (const ingredients of recipe.ingredients) {<br>
+					console.log(ingredients);<br>
+					}<br>
+					console.log('\nDirections:');<br>
+					for (const directions of recipe.directions) {<br>
+					console.log(directions);<br>
+					}<br>
+				</samp>
+				<h6>
+					Task 5 - Add a function called letsCook. Have it say: "I'm hungry! Let's cook..." with the name of your recipe title.
+					Call your new method.
+				</h6>	
+				<samp>
+					/* Using Task 4 Recipe Object */<br>
+					function letscook(recipe) {<br>
+					    console.log(`I'm hungry! Let's cook '${recipe.title}'`)<br>
+					  }<br>
+					
+					letscook(recipe);
+				</samp>
+			</p>
+			<a href="#">Read More</a>
+		</article>
+
 	</section>
 
 	<!-- Sidebar -->

@@ -419,6 +419,260 @@ layout: "default.njk"
 			<a href="#">Read More</a>
 		</article>
 
+		<article class="post">
+			<h3>Loops, Arrays & Objects Practical - Tasks</h3>
+			<small>Posted by Jonathan on Feb 04 2024</small>
+			<p>
+				<h6>
+					Task 1 - Shopping Cart
+				</h6>
+				We are going to be using an array of objects provided as a simple shopping cart example.<br>
+				We need to work out the total cost of the items in the shopping cart.<br><br>
+				<h6>Part 1</h6>
+				<ol>
+					<li>Create a function that takes 1 argument (the array)</li>
+					<li>Create a variable inside the function called “totalPrice”</li>
+					<li>Loop through each item in the array and add the value of the item to the total price, remember to account for the quantity.</li>
+					<li>Return the totalPrice Variable</li>
+					<li>Console.log the returned value</li>
+				</ol>
+				<samp>
+					var shoppingCart=[{name:"loaf of bread",type:"food",quantity:1,price:.85},{name:"multipack beans",type:"food",quantity:1,price:1},{name:"mushrooms",type:"food",quantity:10,price:.1},{name:"can of beer",type:"alcohol",quantity:4,price:1.1},{name:"prosecco",type:"alcohol",quantity:1,price:8.99},{name:"steak",type:"food",quantity:2,price:3.99},{name:"blue cheese",type:"food",quantity:1,price:2.99},{name:"candles",type:"home",quantity:3,price:1.99},{name:"cheesecake",type:"food",quantity:1,price:4.99},{name:"onions",type:"food",quantity:3,price:.4}];<br><br>
+					function price(shoppingCart) {<br>
+						let totalPrice = 0;<br>
+						for (const item of shoppingCart) {<br>
+							totalPrice = totalPrice + (item.price * item.quantity);<br>
+						}<br>
+						return totalPrice<br>
+					}<br>
+				</samp>
+				<h6>Part 2</h6>
+				<ol>
+					<li>Create a function that takes 1 argument (the array)</li>
+					<li>Create a variable inside the function called “totalPrice”</li>
+					<li>Loop through each item in the array and add the value of the item to the total price, remember to account for the quantity.</li>
+					<li>If the item has a type of “food” the total price is 20% less</li>
+					<li>Return the totalPrice Variable</li>
+				</ol>
+				<samp>
+					const foodDiscount = 0.8;<br>
+					<br>
+					function getTotal(cart) {<br>
+						let totalprice = 0;<br>
+						<br>
+						for (const item of cart) {<br>
+						if (item.type == "food") {<br>
+							let itemSubtotal = item.price * item.quantity * foodDiscount;<br>
+							totalprice += itemSubtotal;<br>
+						} else {<br>
+							let itemSubtotal = item.price * item.quantity;<br>
+							totalprice += itemSubtotal;<br>
+						}<br>
+						}<br>    
+						return totalprice;<br>
+					}<br>
+					<br>
+					console.log(getTotal(shoppingCart));<br>
+				</samp>
+				<h6>Part 3</h6>
+				<ol>
+					<li>Add 2 extra arguments to the function for “discountAmount” and “type”</li>
+					<li>Replace the logic that takes off 20% for object.type == “food” for object.type == type and allow the 20% to be the {discountAmount}%</li>
+					<li>Create logic so that if type == “any” all products have a discount applied</li>
+				</ol>
+				<samp>
+					const foodDiscount = 0.8;<br>
+					<br>
+					function getTotal(cart, discountAmount, type) {<br>
+						let totalprice = 0;<br>
+						<br>
+						for (const item of cart) {<br>
+							let itemSubtotal = item.price * item.quantity;<br>
+							<br>
+							if (item.type == type || type == "any") {<br>
+								itemSubtotal = itemSubtotal * discountAmount;<br>
+							}<br>
+							<br>
+							totalprice += itemSubtotal;<br>
+						}<br>
+						return totalprice;<br>
+					}<br>
+					<br>
+					console.log(getTotal(shoppingCart, foodDiscount, "food"));<br>
+				</samp>
+				<h6>Part 4</h6>
+				We are going to be using an array of objects provided as a simple shopping cart example.<br>
+				We need to be able to work out which items cost between 2 price points. So for example, we need the cart to be returned by which products cost more than £2 but less than £5.<br>
+				<ol>
+					<li>Create a function that has 3 arguments “cart”, “lowPrice” and “highPrice”</li>
+					<li>Create an empty array called arrItems at the start of the function.</li>
+					<li>Loop through each item of the array</li>
+					<li>If the price value is higher than or equal to the lowPrice and lower than or equal to the highPrice push to arrItems</li>
+				</ol>
+				<samp>
+					function priceBetween(cart, lowPrice, highPrice) {<br>
+						var arrItems=[]<br>
+						for (const item of cart) {<br>
+						  if (item.price >= lowPrice && item.price <= highPrice) {<br>
+							arrItems.push(item)<br>
+						  }<br>
+						}<br>
+						return arrItems;<br>
+					  }<br>
+					  <br>
+					  console.log(priceBetween(shoppingCart, 2, 5))<br>
+				</samp>
+				<h6>Part 5</h6>
+				<ol>
+					<li>Add an additional argument to the function “quantity” this is going to be a boolean</li>
+					<li>If quantity == true then account for the total price with the quantity included as being between lowPrice and highPrice</li>
+				</ol>
+				<samp>
+					function price(cart) {<br>  
+						let totalPrice = 0;<br>  
+						for (const item of cart) {<br>
+							totalPrice = totalPrice + (item.price * item.quantity);<br> 
+						  }<br>
+						  return totalPrice<br>
+					  }<br>
+					  <br>
+					  function priceBetween(cart, lowPrice, highPrice, quantity) {<br>
+						var arrItems=[]<br>
+						  for (const item of cart) {<br>
+							if (item.price >= lowPrice && item.price <= highPrice) {<br>
+							  arrItems.push(item)<br>
+							}<br>
+						  }<br>
+						  if(quantity){<br>
+							return(price(arrItems))<br>
+						  } else {<br>
+							return arrItems;<br>
+						  }<br>
+					  }<br>
+					  <br>
+					  console.log(priceBetween(shoppingCart, 2, 5, false))<br>
+				</samp>
+				<h6>Additional Tasks</h6>
+				We are going to be creating a function that is able to take all of the values of an array and return the average.<br>
+				<h6>Part 1</h6>
+				The function will be able to return the mode, median or mean of the numbers.<br>
+				<ol>
+					<li>Create an array of random numbers</li>
+					<li>Create a function that takes 1 argument (the array) which can work out the mean of the numbers provided</li>
+					<li>Create a function which can work out the mode of the numbers provided</li>
+					<li>Create a function which can work out the median of the numbers provided</li>
+				</ol>
+				<samp>
+					let numbers = [5, 5, 1, 2, 1, 1];<br>
+					<br>
+					function mean (numbers) {<br>
+					let total = 0;<br>
+					for (const number of numbers) {<br>
+						total = total + number;<br>
+					}<br>
+					total = total / numbers.length;<br>
+					return total;<br>
+					}<br>
+					<br>
+					function mode (numbers) {<br>
+					const modeCount = {};<br>
+					for (const number of numbers) {<br>
+						if(modeCount[number] === undefined) {<br>
+						modeCount[number] = 1;<br>
+						} else {<br>
+						modeCount[number] += 1;<br>
+						}<br>
+					}<br>
+					<br>
+					let currentHighestCount = 0;<br>
+					let currentHighestNumber;<br>
+					<br>
+					for (const entry of Object.entries(modeCount)) {<br>
+						const number = entry[0];<br>
+						const count = entry[1];<br>
+						if(count > currentHighestCount) {<br>
+						currentHighestCount = count;<br>
+						currentHighestNumber = number;<br>
+						}<br>
+					}<br>
+					return currentHighestNumber<br>
+					}<br>
+					<br>
+					function median (numbers) {<br>
+					numbers.sort(function (a, b) {<br>
+						return a - b;<br>
+					});<br>
+					const middleNumberPosition = Math.round(numbers.length /2) - 1;<br>
+					<br>
+					return numbers[middleNumberPosition];<br>
+					}<br>
+					<br>
+					console.log(mode(numbers));<br>
+				</samp>
+				<h6>Part 2</h6>
+				<ol>
+					<li>Create a new function which takes 2 arguments (the array and a type variable).</li>
+					<li>Create a switch statement which has the cases ‘mode’, ‘median’ and ‘mean’</li>
+					<li>Copy and paste the functionality from your 3 previous functions into the case statement</li>
+					<li>Return the required number based on the arguments passed</li>
+				</ol>
+				<samp>
+					let numbers = [5, 5, 1, 2, 1, 1];<br>
+					<br>
+					function meanMedianMode(numbers, type) {<br>
+					var text;<br>
+					<br>
+					switch(type) {<br>
+						case "mean":<br>
+						let total = 0;<br>
+						for (const number of numbers) {<br>
+						total = total + number;<br>
+						}<br>
+						total = total / numbers.length;<br>
+						return total;<br>
+						case "mode":<br>
+						const modeCount = {};<br>
+						for (const number of numbers) {<br>
+						if(modeCount[number] === undefined) {<br>
+							modeCount[number] = 1;<br>
+						} else {<br>
+							modeCount[number] += 1;<br>
+						}<br>
+						}<br>
+						let currentHighestCount = 0;<br>
+						let currentHighestNumber;<br>
+						for (const entry of Object.entries(modeCount)) {<br>
+						const number = entry[0];<br>
+						const count = entry[1];<br>
+						if(count > currentHighestCount) {<br>
+							currentHighestCount = count;<br>
+							currentHighestNumber = number;<br>
+						}<br>
+						}<br>
+						return currentHighestNumber<br>
+						case "median":<br>
+						numbers.sort(function (a, b) {<br>
+						return a - b;<br>
+						});<br>
+						const middleNumberPosition = Math.round(numbers.length /2) - 1;<br>
+						return numbers[middleNumberPosition];<br>
+						default:<br>
+						text = "I have never heard of that Average...";<br>
+						return text;<br>
+					}<br>
+					}<br>
+					<br>
+					console.log(meanMedianMode(numbers, "mean"));<br>
+				</samp>
+			</p>
+				
+				
+				
+				
+				
+			<a href="#">Read More</a>
+		</article>
+
 	</section>
 
 	<!-- Sidebar -->

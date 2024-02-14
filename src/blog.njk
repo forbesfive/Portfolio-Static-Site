@@ -699,9 +699,195 @@ layout: "default.njk"
 					console.log(meanMedianMode(numbers, "mean"));<br>
 				</samp>
 			</p>
+			<a href="#">Read More</a>
+		</article>
+			
+			<article class="post">
+				<h3>Intro to JS - Intro to the DOM - Lesson Tasks</h3>
+				<small>Posted by Jonathan on Feb 14 2024</small>
+				<p>Learners were be introduced to the DOM (Document Object Model). They were shown how to make javascript bring a page to life by reacting to events. The learners were shown how to trigger function calls using on page events.
+					<h6>Task 1</h6>
+					<ol>
+						<li>Go to the <a href="https://codepen.io/andrushka/pen/dyvVvmr?editors=1011" target="_blank">codepen</a>.</li>
+						<li>Look through the HTML first.</li>
+						<li>Then try to update the JS so it sets the variables from the DOM.</li>
+					</ol>
+					<samp>
+						// Modify the code below to set the variables appropriately.<br>
+						<br>
+						// Get the form by ID from the forms collection.<br>
+						const form = document.getElementById('todo');<br>
+						// Get the todo pane (the 'ul' element).<br>
+						const todoPane = document.getElementById('todo-pane');<br>
+						// Get the text input for the title.<br>
+						const titleInput = document.getElementById('title');<br>
+						// Get the priority select element.<br>
+						const prioritySelect = document.getElementById('priority');<br>
+						// Get a list of all elements with the 'todo' class.<br>
+						const allTodos = document.querySelectorAll('.todo');<br>
+						<br>
+						console.log('form:', form);<br>
+						console.log('todoPane:', todoPane);<br>
+						console.log('titleInput:', titleInput);<br>
+						console.log('prioritySelect:', prioritySelect);<br>
+					</samp>
+					<h6>Task 2</h6>
+					<ol>
+						<li>Go to the <a href="https://codepen.io/andrushka/pen/RwpjgRg?editors=1010" target="_blank">codepen</a>.</li>
+						<li>Fill in the body of createElement() first.</li>
+						<li>Now follow the instructions at the end and insert newElement into the DOM</li>
+					</ol>
+					<samp>
+						const todoPane = document.getElementById('todo-pane');<br>
+						<br>
+						function createElement(title) {<br>
+						// Create the text node with the variable 'title'.<br>
+						const newTextNode = document.createTextNode(title);<br>
+						// Create a new list item element to contain the text node.<br>
+						const newListItem = document.createElement('li');<br>
+						// Add the text node to the list item element.<br>
+						newListItem.appendChild(newTextNode);<br>
+						// Return the new element.<br>
+						return newListItem;<br>
+						}<br>
+						<br>
+						const newElement = createElement('This is the title');<br>
+						<br>
+						// Insert newElement into the unordered list with id 'todo-pane'.<br>
+
+						todoPane.appendChild(newElement);<br>
+						todoPane.appendChild(newElement2);<br>
+					</samp>
+					<h6>Task 3</h6>
+					<ol>
+						<li>Go to the <a href="https://codepen.io/andrushka/pen/RwpjgRg?editors=1010" target="_blank">codepen</a>.</li>
+						<li>Remove the list item elements using Element.remove().</li>
+					</ol>
+					<samp>
+						const removeListItem = document.querySelector('.todo');<br>
+						removeListItem.remove();<br>
+						document.querySelector('.todo').remove();<br>
+					</samp>
+					<h6>Task 4</h6>
+					<ol>
+						<li>Go to the <a href="https://codepen.io/andrushka/pen/poeWPRV?editors=0010" target="_blank">codepen</a>.</li>
+						<li>Add a submit handler to the form.</li>
+					</ol>
+					<samp>
+						const form = document.forms.todo;<br>
+						<br>
+						Add a submit handler to the form that displays an alert.<br>
+						Can you find different ways to trigger the alert?<br>
+						<br>
+						const form = document.querySelector('form');<br>
+						<br>
+						function sayHi(event) {<br>
+						  alert('Hi!');<br>
+						}<br>
+						<br>
+						form.addEventListener('submit', sayHi);<br>
+					</samp>
+					<h6>Task 5</h6>
+					<ol>
+						<li>Go to the <a href="https://codepen.io/andrushka/pen/abJLLrO?editors=1010" target="_blank">codepen</a>.</li>
+						<li>Add a submit listener to the form that prevents default.</li>
+						<li>Confirm the form can’t be submitted.</li>
+						<li>Add a click listener to the todo note that removes it.</li>
+					</ol>
+					<samp>
+						Get the form by ID from the forms collection.<br>
+						const form = document.forms.todo;<br>
+						<br>
+						1. Add a submit listener to the form that prevents default.<br>
+						2. Fill out the title and submit<br>
+						3. It shouldn't submit and you shouldn't see 'Not Found'.<br>
+						4. Add a click listener to the list item. When clicked it should remove the element from the DOM.<br>
+						<br>
+						const form = document.getElementById('todo');<br>
+						<br>
+						form.addEventListener('submit', function (event) {<br>
+						  event.preventDefault();<br>
+						});<br>
+						<br>
+						const removeItem = document.querySelector('li');<br>
+						<br>
+						removeItem.addEventListener('click', function (event) {<br>
+						  const todoToRemove = event.currentTarget;<br>
+						  todoToRemove.remove();<br>
+						})<br>						
+					</samp>
+					<h6>Task 6</h6>
+					<ol>
+						<li>Putting it all together</li>
+						<li>Go to the <a href="https://codepen.io/andrushka/pen/yLMzPXB?editors=1010" target="_blank">codepen</a>.</li>
+					</ol>
+					<samp>
+						// Store the URL of an image for each priority level.<br>
+						const priorityImages = {<br>
+						  low: 'https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Flag-green.png',<br>
+						  medium: 'https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Flag-yellow.png',<br>
+						  high: 'https://cdn1.iconfinder.com/data/icons/prettyoffice8/256/Flag-red.png',<br>
+						};<br>
+						<br>
+						// Get the form by ID from the forms collection.<br>
+						const form = document.getElementById('todo');<br>
+						// Get the todo pane (the 'ul' element) to insert todos into.<br>
+						const todoPane = document.getElementById('todo-pane');<br>
+						// Get the text input for the title. We'll read from this when creating the todo.<br>
+						const titleInput = document.getElementById('title');<br>
+						// Get the priority select element. We'll read from this when creating the todo.<br>
+						const prioritySelect = document.getElementById('priority');<br>
+						// Get a *live* list of all elements with the 'todo' class.<br>
+						const allTodos = document.querySelectorAll('.todo');<br>
+						<br>
+						// Add an event listener that will<br>
+						// 1. Create a new todo. The details should come from the form.<br>
+						// 2. Insert it into the DOM.<br>
+						// 3. Clear the title input ready to create a new todo note.<br>
+						// 4. Prevent the default behaviour (ie don't submit to a server).<br>
+						<br>
+						function createTodo(title, priority) {<br>
+						  // Create the text node with the variable 'title'.<br>
+						  const newTextNode = document.createTextNode(title);<br>
+						  // Create a new list item element to contain the text node.<br>
+						  const newListItem = document.createElement('li');<br>
+						  <br>
+						// Optional extras:<br>
+						// 1. Add an image for the priority. The URLs are stored in the priorityImages object.<br>
+						  const image = document.createElement('img');<br>
+						  image.src = priorityImages[priority];<br>
+						  newListItem.appendChild(image);<br>
+						  <br>
+						  // Add the text node to the list item element.<br>
+						  newListItem.appendChild(newTextNode);<br>
+						  <br>
+						  // The most recently created list item (only!) should have the 'just-created' class.<br>
+						  newListItem.classList.add('todo', 'just-created');<br>
+						  <br>
+						// Optional extras:<br>
+						// 1. Add a click handler to the note that deletes it on click using Element.remove().<br>
+						  newListItem.addEventListener('click', function(event) {<br>
+							const todoRemove = event.currentTarget;<br>
+							todoRemove.remove();<br>
+						  })<br>
+						  <br>
+						  // Return the new element.<br>
+						  return newListItem;<br>
+						}<br>
+						
+						form.addEventListener('submit', function (event) {<br>
+						  event.preventDefault();<br>
+						  const newElement = createTodo(titleInput.value, prioritySelect.value);<br>
+						  todoPane.appendChild(newElement)<br>
+						  form.reset();<br>
+						});<br>
+					</samp>
+				</p>
+				<a href="#">Read More</a>
+			</article>
 				
 			<article class="post">
-				<h3>Blog Post Eight</h3>
+				<h3>Blog Post Nine</h3>
 				<small>Posted by Jonathan on Jan 30 2024</small>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -710,12 +896,8 @@ layout: "default.njk"
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				<a href="#">Read More</a>
-			</article>
+			</article>	
 				
-				
-				
-			<a href="#">Read More</a>
-		</article>
 
 	</section>
 

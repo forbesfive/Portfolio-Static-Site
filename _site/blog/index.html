@@ -767,7 +767,7 @@
 			<article class="post">
 				<h3>Intro to JS - Intro to the DOM - Lesson Tasks</h3>
 				<small>Posted by Jonathan on Feb 14 2024</small>
-				<p>Learners were be introduced to the DOM (Document Object Model). They were shown how to make javascript bring a page to life by reacting to events. The learners were shown how to trigger function calls using on page events.
+				<p>Learners were introduced to the DOM (Document Object Model). They were shown how to make javascript bring a page to life by reacting to events. The learners were shown how to trigger function calls using on page events.
 					<h6>Task 1</h6>
 					<ol>
 						<li>Go to the <a href="https://codepen.io/andrushka/pen/dyvVvmr?editors=1011" target="_blank">codepen</a>.</li>
@@ -949,7 +949,67 @@
 			</article>
 				
 			<article class="post">
-				<h3>Blog Post Nine</h3>
+				<h3>Intro to JS - Intro to the DOM - Practical Tasks</h3>
+				<small>Posted by Jonathan on Feb 19 2024</small>
+				<p>Initial codepen/template <a href="https://codepen.io/andrushka/pen/rNdQmOd?editors=1000" target="_blank">codepen.io/andrushka/pen/rNdQmOd</a><br>
+					We are going to be creating a page that showcases some of our favourite animals. The page must contain some filters that will show/ hide the animals based on which filters are clicked. For example if you have images of pandas, tigers, lions and giraffes, when the giraffe filter is clicked the other animals get hidden.<br>
+					We will also have a text input that can be used to filter the images based on their descriptions. For example if you have an image called “tiger jumping” and an image called “lion jumping” then typing “jump” into the search box should hide the other posts and show just these 2.<br>
+					We need both of these things to work together so if the word “jump” is searched and the lion filter is clicked, only the lion post will show<br>
+					<h6>Task 1</h6>
+					<ol>
+						<li>Go to <a href="https://codepen.io/andrushka/pen/rNdQmOd?editors=1000" >codepen.io/andrushka/pen/rNdQmOd</a></li>
+						<li>Pick 4 animals</li>
+						<li>Go to pexels.com and get 4 pictures of each animal (16 total)</li>
+						<li>Create a HTML page containing a search input, 4 buttons (one for each animal), 1 more button labelled “Show All”</li>
+						<li>Give each button a class of “buttonFilter”</li>
+						<li>Add 16 containers with the animal images randomly spread out. Add a class that represents the animal class=”tiger”</li>
+					</ol>
+					<a href="../theDOMPracticalTasks#task1">Solution</a>
+					<br><br>
+					<h6>Task 2</h6>
+					<ol>
+						<li>Add a second class to each container that is called “imageFilter”.</li>
+						<li>Add an attribute to each button animal =”tiger” (Show all, animal =”all”)</li>
+						<li>Add a variable const button = document.querySelectorAll(".buttonFilter");</li>
+						<li>const images = document.querySelectorAll(".imageFilter");</li>
+					</ol>
+					<a href="../theDOMPracticalTasks#task2">Solution</a>
+					<br><br>
+					<h6>Task 3</h6>
+					<ol>
+						<li>Loop through each button in the button array.</li>
+						<li>Add an event listener for each button that looks for a click event</li>
+						<li>Grab the animal attribute with animal = this.getAttribute("animal");</li>
+					</ol>
+					<a href="../theDOMPracticalTasks#task3">Solution</a>
+					<br><br>
+					<h6>Task 4</h6>
+					<ol>
+						<li>Loop through each item in the images array</li>
+						<li>If animal = all change all of the containers to display:block</li>
+						<li>If animal = “tiger” then if the container contains the class tiger display:block otherwise display:none</li>
+					</ol>
+					<a href="../theDOMPracticalTasks#task4">Solution</a>
+					<br><br>
+					<h6>Task 5</h6>
+					<ol>
+						<li>Add a keyup event to the search box</li>
+						<li>The text entered should be used to filter based on the image alt attribute (or use the src attribute if you have no alts)</li>
+						<li>The selected filter button should also be taken into account</li>
+					</ol>
+					<a href="../theDOMPracticalTasks#task5">Solution</a>
+					<br><br>
+					<h6>Task 6</h6>
+					<ol>
+						<li>Add CSS classes that show which filter is currently selected by adding a border to the clickable element.</li>
+						<li>Add some helper text above the images that says something like “showing animals that match the search “{searchString}” and the filter {filter}</li>
+					</ol>
+					<a href="../theDOMPracticalTasks#task6">Solution</a>
+				</p>
+				<p>GitHub repository: <a href="https://github.com/forbesfive/The-DOM-Practical-Tasks.git" target="-blank">The-DOM-Practical-Tasks</a></p>
+			</article>
+			<article class="post">
+				<h3>Blog Post Ten</h3>
 				<small>Posted by Jonathan on Jan 30 2024</small>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -958,9 +1018,7 @@
 				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				<a href="#">Read More</a>
-			</article>	
-				
-
+			</article>
 	</section>
 
 	<!-- Sidebar -->

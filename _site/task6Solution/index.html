@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- include CSS, Navbar, footer--> 
+
+    <!-- NAVBAR -->
+    <div class="container" id="navheader">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><img src="../img/logo.jpg" width="10%"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../form">Contact Me</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Section</a></li>
+                        <li><a class="dropdown-item" href="#">Section</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Section</a></li>
+                        </ul>
+                    </li> -->
+                    <!-- <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                    </ul> -->
+                    <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form> -->
+                </div>
+            </div>
+        </nav>
+
+
+        <!-- <h1>Hello from default layout</h1> -->
+
+        <header>
+            <h1>Portfolio Homepage</h1>
+        </header>
+    </div>
+
+      
+<!-- TASK 6 SOLUTION SECTION -->
+<div class="container">
+    <h2>Task 6 Solution Section</h2>
+    <hr>
+    <section>
+        <article class="post">
+            <h3>Intro to JS - Intro to the DOM - Practical Tasks</h3>
+            <small>Posted by Jonathan on Feb 19 2024</small>
+            <p>Initial codepen/template <a href="https://codepen.io/andrushka/pen/rNdQmOd?editors=1000" target="_blank">codepen.io/andrushka/pen/rNdQmOd</a><br>
+                'We are going to be creating a page that showcases some of our favourite animals. The page must contain some filters that will show/ hide the animals based on which filters are clicked. For example if you have images of pandas, tigers, lions and giraffes, when the giraffe filter is clicked the other animals get hidden.<br>
+                We will also have a text input that can be used to filter the images based on their descriptions. For example if you have an image called “tiger jumping” and an image called “lion jumping” then typing “jump” into the search box should hide the other posts and show just these 2.<br>
+                We need both of these things to work together so if the word “jump” is searched and the lion filter is clicked, only the lion post will show'<br>
+                <h6 id="task1">Task 1 Solution</h6>
+                <ol>
+                    <li>Go to <a href="https://codepen.io/andrushka/pen/rNdQmOd?editors=1000" >codepen.io/andrushka/pen/rNdQmOd</a></li>
+                    <li>Pick 4 animals</li>
+                    <li>Go to pexels.com and get 4 pictures of each animal (16 total)</li>
+                    <li>Create a HTML page containing a search input, 4 buttons (one for each animal), 1 more button labelled “Show All”</li>
+                    <li>Give each button a class of “buttonFilter”</li>
+                    <li>Add 16 containers with the animal images randomly spread out. Add a class that represents the animal class=”tiger”</li>
+                </ol>
+                <samp>
+                    <h6><strong>HTML</strong></h6>
+                    &lt!DOCTYPE html&gt<br>
+                    &lthtml lang="en"&gt<br>
+                      &lthead&gt<br>
+                        &ltmeta charset="UTF-8"&gt<br>
+                        &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt<br>
+                        &ltlink rel="shortcut icon" href="#"&gt<br>
+                        &ltlink rel="stylesheet" href="./style.css"&gt<br>
+                        &lt!-- &ltscript defer src="../Task_2/app.js"&gt<br>&lt/script&gt<br> --&gt<br>
+                        &lt!-- &ltscript defer src="../Task_3/app.js"&gt<br>&lt/script&gt<br> --&gt<br>
+                        &lt!-- &ltscript defer src="../Task_4/app.js"&gt<br>&lt/script&gt<br> --&gt<br>
+                        &lt!-- &ltscript defer src="../Task_5/app.js"&gt<br>&lt/script&gt<br> --&gt<br>
+                        &ltscript defer src="../Task_6/app.js"&gt<br>&lt/script&gt<br>
+                        &lttitle&gt<br>Dom Practical - Tasks 1 to 6&lt/title&gt<br>
+                      &lt/head&gt<br>
+                      &ltbody&gt<br>
+                        &lta href="https://codepen.io/andrushka/pen/rNdQmOd"&gt<br>Codepen Link to animal pictures&lt/a&gt<br>&ltbr /&gt<br>
+                        &lta href="#"&gt<br>Completed tasks Codepen Link&lt/a&gt<br>
+                        &ltmain class="container"&gt<br>
+                          &lth1&gt<br>Animal Filters&lt/h1&gt<br>
+                          &ltp&gt<br>You can filter the images by selecting a type. You can also enter keywords into the search bar.&lt/p&gt<br>
+                          &ltform id="filters"&gt<br>
+                            &ltfieldset&gt<br>
+                              &lt!-- Task 1 - Pick 4 animals - Create a HTML page containing a search input, 4 buttons (one for each animal), 1 more button labelled “Show All” - Give each button a class of “buttonFilter” --&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="bear" value="bear"&gt<br>
+                              &ltlabel for="bear"&gt<br>Bear&lt/label&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="dolphin" value="dolphin"&gt<br>
+                              &ltlabel for="dolphin"&gt<br>Dolphin&lt/label&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="duck" value="duck"&gt<br>
+                              &ltlabel for="duck"&gt<br>Duck&lt/label&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="giraffe" value="giraffe"&gt<br>
+                              &ltlabel for="giraffe"&gt<br>Giraffe&lt/label&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="all" value="all" checked="checked"&gt<br>
+                              &ltlabel for="all" class="selected"&gt<br>Show All&lt/label&gt<br>
+                            &lt/fieldset&gt<br>
+                            &ltfieldset&gt<br>
+                              &ltinput type="search" name="search" id="search"&gt<br>
+                              &ltlabel for="search"&gt<br>Search&lt/label&gt<br>
+                            &lt/fieldset&gt<br>
+                          &lt/form&gt<br>
+                    
+                          &ltdiv id="summary"&gt<br>&lt/div&gt<br>
+                    
+                          &ltdiv id="results"&gt<br>
+                            &lt!-- Task 1 - Add 16 containers with the animal images randomly spread out. Add a class that represents the animal class=”tiger” --&gt<br>
+                            &ltimg animal="bear" bear" src="https://images.pexels.com/photos/1068554/pexels-photo-1068554.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Close-Up Photography of Grizzly Bear"&gt<br>
+                            &ltimg animal="dolphin" dolphin" src="https://images.pexels.com/photos/219945/pexels-photo-219945.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Black Whale in Water"&gt<br>
+                            &ltimg animal="duck" duck" src="https://images.pexels.com/photos/157465/pexels-photo-157465.jpeg?auto=compress&cs=tinysrgb&h=350" alt="2 Yellow Ducklings Closeup Photography"&gt<br>
+                            &ltimg animal="dolphin" dolphin" src="https://images.pexels.com/photos/966966/pexels-photo-966966.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Gray Dolphin on Blue Water"&gt<br>
+                            &ltimg animal="giraffe" giraffe" src="https://images.pexels.com/photos/158832/giraffe-reticulated-giraffe-neck-beautiful-158832.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Brown Giraffe during Daytime"&gt<br>
+                            &ltimg animal="bear" bear" src="https://images.pexels.com/photos/1083502/pexels-photo-1083502.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Brown Bear on Brown Wood"&gt<br>
+                            &ltimg animal="dolphin" dolphin" src="https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Dolphins Jumping Out from Ocean"&gt<br>
+                            &ltimg animal="bear" bear" src="https://images.pexels.com/photos/598966/pexels-photo-598966.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Grayscale Photo of a Polar Bear Cub "&gt<br>
+                            &ltimg animal="duck" duck" src="https://images.pexels.com/photos/162140/duckling-birds-yellow-fluffy-162140.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Duckling on Black Soil during Daytime"&gt<br>
+                            &ltimg animal="giraffe" giraffe" src="https://images.pexels.com/photos/797643/pexels-photo-797643.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Selective Focus Photography of Giraffe Head"&gt<br>
+                            &ltimg animal="bear" bear" src="https://images.pexels.com/photos/1466592/pexels-photo-1466592.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Brown Bear On Body Of Water"&gt<br>
+                            &ltimg animal="giraffe" giraffe" src="https://images.pexels.com/photos/2541407/pexels-photo-2541407.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Portrait photo of a giraffe isolated on blue background"&gt<br>
+                            &ltimg animal="duck" duck" src="https://images.pexels.com/photos/833687/pexels-photo-833687.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Green and Gray Mallard Duck"&gt<br>
+                            &ltimg animal="dolphin" dolphin" src="https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Split-shot Photo of Dolphins Undewater "&gt<br>
+                            &ltimg animal="duck" duck" src="https://images.pexels.com/photos/162137/duckling-birds-yellow-fluffy-162137.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Yellow Duckling on Gray Dirt"&gt<br>
+                            &ltimg animal="giraffe" giraffe" src="https://images.pexels.com/photos/802112/pexels-photo-802112.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Close-Up Photography of Giraffe"&gt<br>
+                          &lt/div&gt<br>
+                        &lt/main&gt<br>
+                      &lt/body&gt<br>
+                    &lt/html&gt<br>
+                    <br>
+                    <h6><strong>CSS</strong></h6>
+                    h1{<br>
+                        text-align: center;<br>
+                      }<br>
+                      <br>
+                      .form-preamble {<br>
+                        text-align: center;<br>
+                      }<br>
+                      <br>
+                      form {<br>
+                        width: 55em;<br>
+                        margin: 1em auto;<br>
+                      }<br>
+                      <br>
+                      fieldset {<br>
+                        margin-bottom: 1em;<br>
+                      }<br>
+                      
+                      button {<br>
+                        margin-left: 1em;<br>
+                      }<br>
+                      <br>
+                      small {<br>
+                        margin-top: 1em;<br>
+                        display: block;<br>
+                        font-size: medium;<br>
+                      }<br>
+                </samp>
+                
+                <h6 id="task2">Task 2 Solution</h6>
+                <ol>
+                    <li>Add a second class to each container that is called “imageFilter”.</li>
+                    <li>Add an attribute to each button animal =”tiger” (Show all, animal =”all”)</li>
+                    <li>Add a variable const button = document.querySelectorAll(".buttonFilter");</li>
+                    <li>const images = document.querySelectorAll(".imageFilter");</li>
+                </ol>
+
+                <samp>
+                    <h6><strong>HTML</strong></h6>
+                    &lt!DOCTYPE html&gt<br>
+                    &lthtml lang="en"&gt<br>
+                      &lthead&gt<br>
+                        &ltmeta charset="UTF-8"&gt<br>
+                        &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt<br>
+                        &ltlink rel="shortcut icon" href="#"&gt<br>
+                        &ltlink rel="stylesheet" href="./style.css"&gt<br>
+                        &lt!-- &ltscript defer src="../Task_2/app.js"&gt<br>&lt/script&gt<br> --&gt<br>
+                        &lt!-- &ltscript defer src="../Task_3/app.js"&gt<br>&lt/script&gt<br> --&gt<br>
+                        &lt!-- &ltscript defer src="../Task_4/app.js"&gt<br>&lt/script&gt<br> --&gt<br>
+                        &lt!-- &ltscript defer src="../Task_5/app.js"&gt<br>&lt/script&gt<br> --&gt<br>
+                        &ltscript defer src="../Task_6/app.js"&gt<br>&lt/script&gt<br>
+                        &lttitle&gt<br>Dom Practical - Tasks 1 to 6&lt/title&gt<br>
+                      &lt/head&gt<br>
+                      &ltbody&gt<br>
+                        &lta href="https://codepen.io/andrushka/pen/rNdQmOd"&gt<br>Codepen Link to animal pictures&lt/a&gt<br>&ltbr /&gt<br>
+                        &lta href="#"&gt<br>Completed tasks Codepen Link&lt/a&gt<br>
+                        &ltmain class="container"&gt<br>
+                          &lth1&gt<br>Animal Filters&lt/h1&gt<br>
+                          &ltp&gt<br>You can filter the images by selecting a type. You can also enter keywords into the search bar.&lt/p&gt<br>
+                          &ltform id="filters"&gt<br>
+                            &ltfieldset&gt<br>
+                              &lt!-- Task 1 - Pick 4 animals - Create a HTML page containing a search input, 4 buttons (one for each animal), 1 more button labelled “Show All” - Give each button a class of “buttonFilter” --&gt<br>
+                              &lt!-- Task 2 - Add an attribute to each button animal =”tiger” (Show all, animal =”all”) --&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="bear" value="bear" animal="bear"&gt<br>
+                              &ltlabel for="bear"&gt<br>Bear&lt/label&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="dolphin" value="dolphin" animal="dolphin"&gt<br>
+                              &ltlabel for="dolphin"&gt<br>Dolphin&lt/label&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="duck" value="duck" animal="duck"&gt<br>
+                              &ltlabel for="duck"&gt<br>Duck&lt/label&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="giraffe" value="giraffe" animal="giraffe"&gt<br>
+                              &ltlabel for="giraffe"&gt<br>Giraffe&lt/label&gt<br>
+                              &ltinput class="buttonFilter" type="radio" name="animalType" id="all" value="all" animal="all" checked="checked"&gt<br>
+                              &ltlabel for="all" class="selected"&gt<br>Show All&lt/label&gt<br>
+                            &lt/fieldset&gt<br>
+                            &ltfieldset&gt<br>
+                              &ltinput type="search" name="search" id="search"&gt<br>
+                              &ltlabel for="search"&gt<br>Search&lt/label&gt<br>
+                            &lt/fieldset&gt<br>
+                          &lt/form&gt<br>
+                    
+                          &ltdiv id="summary"&gt<br>&lt/div&gt<br>
+                    
+                          &ltdiv id="results"&gt<br>
+                            &lt!-- Task 1 - Add 16 containers with the animal images randomly spread out. Add a class that represents the animal class=”tiger” --&gt<br>
+                            &lt!-- Task 2 - Add a second class to each container that is called “imageFilter”. --&gt<br>
+                            &ltimg animal="bear" class="imageFilter bear" src="https://images.pexels.com/photos/1068554/pexels-photo-1068554.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Close-Up Photography of Grizzly Bear"&gt<br>
+                            &ltimg animal="dolphin" class="imageFilter dolphin" src="https://images.pexels.com/photos/219945/pexels-photo-219945.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Black Whale in Water"&gt<br>
+                            &ltimg animal="duck" class="imageFilter duck" src="https://images.pexels.com/photos/157465/pexels-photo-157465.jpeg?auto=compress&cs=tinysrgb&h=350" alt="2 Yellow Ducklings Closeup Photography"&gt<br>
+                            &ltimg animal="dolphin" class="imageFilter dolphin" src="https://images.pexels.com/photos/966966/pexels-photo-966966.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Gray Dolphin on Blue Water"&gt<br>
+                            &ltimg animal="giraffe" class="imageFilter giraffe" src="https://images.pexels.com/photos/158832/giraffe-reticulated-giraffe-neck-beautiful-158832.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Brown Giraffe during Daytime"&gt<br>
+                            &ltimg animal="bear" class="imageFilter bear" src="https://images.pexels.com/photos/1083502/pexels-photo-1083502.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Brown Bear on Brown Wood"&gt<br>
+                            &ltimg animal="dolphin" class="imageFilter dolphin" src="https://images.pexels.com/photos/3354346/pexels-photo-3354346.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Dolphins Jumping Out from Ocean"&gt<br>
+                            &ltimg animal="bear" class="imageFilter bear" src="https://images.pexels.com/photos/598966/pexels-photo-598966.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Grayscale Photo of a Polar Bear Cub "&gt<br>
+                            &ltimg animal="duck" class="imageFilter duck" src="https://images.pexels.com/photos/162140/duckling-birds-yellow-fluffy-162140.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Duckling on Black Soil during Daytime"&gt<br>
+                            &ltimg animal="giraffe" class="imageFilter giraffe" src="https://images.pexels.com/photos/797643/pexels-photo-797643.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Selective Focus Photography of Giraffe Head"&gt<br>
+                            &ltimg animal="bear" class="imageFilter bear" src="https://images.pexels.com/photos/1466592/pexels-photo-1466592.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Brown Bear On Body Of Water"&gt<br>
+                            &ltimg animal="giraffe" class="imageFilter giraffe" src="https://images.pexels.com/photos/2541407/pexels-photo-2541407.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Portrait photo of a giraffe isolated on blue background"&gt<br>
+                            &ltimg animal="duck" class="imageFilter duck" src="https://images.pexels.com/photos/833687/pexels-photo-833687.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Green and Gray Mallard Duck"&gt<br>
+                            &ltimg animal="dolphin" class="imageFilter dolphin" src="https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Split-shot Photo of Dolphins Undewater "&gt<br>
+                            &ltimg animal="duck" class="imageFilter duck" src="https://images.pexels.com/photos/162137/duckling-birds-yellow-fluffy-162137.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Yellow Duckling on Gray Dirt"&gt<br>
+                            &ltimg animal="giraffe" class="imageFilter giraffe" src="https://images.pexels.com/photos/802112/pexels-photo-802112.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Close-Up Photography of Giraffe"&gt<br>
+                          &lt/div&gt<br>
+                        &lt/main&gt<br>
+                      &lt/body&gt<br>
+                    &lt/html&gt<br>
+                    <br>
+                    <h6><strong>JavaScript</strong></h6>
+                    /* Task2 - Add a variable const button = document.querySelectorAll(".buttonFilter"); - const images = document.querySelectorAll(".imageFilter");*/<br>
+                    const button = document.querySelectorAll(".buttonFilter");<br>
+                    const images = document.querySelectorAll(".imageFilter");<br>
+                    const animalRadios = document.getElementsByName('animalType')<br>
+                    <br>
+                    console.log(images, animalRadios);<br>
+                </samp>
+
+                <h6  id="task3">Task 3</h6>
+                <ol>
+                    <li>Loop through each button in the button array.</li>
+                    <li>Add an event listener for each button that looks for a click event</li>
+                    <li>Grab the animal attribute with animal = this.getAttribute("animal");</li>
+                </ol>
+                <samp>
+                    <h6><strong>JavaScript</strong></h6>
+                    /* Task2 - Add a variable const button = document.querySelectorAll(".buttonFilter"); - const images = document.querySelectorAll(".imageFilter");*/<br>
+                    const button = document.querySelectorAll(".buttonFilter");<br>
+                    const images = document.querySelectorAll(".imageFilter");<br>
+                    const animalRadios = document.getElementsByName('animalType')<br>
+                    <br>
+                    // console.log(images, animalRadios);<br>
+                    <br>
+                    /* Task 3 - Loop through each button in the button array. - Add an event listener for each button that looks for a click event */<br>
+                    for (btn of button) {<br>
+                            btn.addEventListener('click', filterAnimals);<br>
+                        }<br>
+                    <br>
+                    /* Task 3 - Grab the animal attribute with animal = this.getAttribute("animal"); */<br>
+                    function filterAnimals () { <br>
+                        animal = this.getAttribute("animal");<br>
+                        console.log(animal);<br>
+                    }<br>
+                </samp>
+
+                <h6 id="task4">Task 4</h6>
+                <ol>
+                    <li>Loop through each item in the images array</li>
+                    <li>If animal = all change all of the containers to display:block</li>
+                    <li>If animal = “tiger” then if the container contains the class tiger display:block otherwise display:none</li>
+                </ol>
+                <samp>
+                    <h6><strong>CSS</strong></h6>
+                    /* Task 4 */<br>
+                    .hidden {<br>
+                    display: none;<br>
+                    }<br>
+                    <br>
+                    <h6><strong>JavaScript</strong></h6>
+                    /* Task2 - Add a variable const button = document.querySelectorAll(".buttonFilter"); - const images = document.querySelectorAll(".imageFilter");*/<br>
+                    const button = document.querySelectorAll(".buttonFilter");<br>
+                    const images = document.querySelectorAll(".imageFilter");<br>
+                    // const animalRadios = document.getElementsByName('animalType')<br>
+                    <br>
+                    /* Task 3 - Loop through each button in the button array. - Add an event listener for each button that looks for a click event */<br>
+                    for (btn of button) {<br>
+                            btn.addEventListener('click', filterAnimals);<br>
+                        }<br>
+                    <br>
+                    /* Task 3 - Grab the animal attribute with animal = this.getAttribute("animal"); */<br>
+                    function filterAnimals () { <br>
+                        // animal = this.getAttribute("animal");<br>
+                        // console.log(animal);<br>
+                        <br>
+                        // // To be able to complete this evenings class we need a different approach:<br>
+                        // console.log(document.querySelector('input[name="animalType"]:checked').value);<br>
+                        <br>
+                        /* Task 4 - Loop through each item in the images array */<br>
+                        for (image of images) {<br>
+                            let animalType = image.getAttribute("animal");<br>
+                            let selectedAnimal = document.querySelector('input[name="animalType"]:checked').value;<br>
+                            <br>
+                            /* Task 4 - If animal = all change all of the containers to display:block - If animal = “tiger” then if the container contains the class tiger display:block otherwise display:none*/<br>
+                            if (animalType == selectedAnimal || selectedAnimal == 'all') {<br>
+                                // image.classList.remove('hidden')<br>
+                                image.style.display = 'block';<br>
+                            } else {<br>
+                                // image.classList.add('hidden')<br>
+                                image.style.display = 'none';<br>
+                            }<br>
+                        }<br>
+                    }<br>
+                </samp>
+
+                <h6  id="task5">Task 5</h6>
+                <ol>
+                    <li>Add a keyup event to the search box</li>
+                    <li>The text entered should be used to filter based on the image alt attribute (or use the src attribute if you have no alts)</li>
+                    <li>The selected filter button should also be taken into account</li>
+                </ol>
+                <samp>
+                    <h6><strong>JavaScript</strong></h6>
+                    /* Task2 - Add a variable const button = document.querySelectorAll(".buttonFilter"); - const images = document.querySelectorAll(".imageFilter");*/<br>
+                    const button = document.querySelectorAll(".buttonFilter");<br>
+                    const images = document.querySelectorAll(".imageFilter");<br>
+                    // const animalRadios = document.getElementsByName('animalType')<br>
+                    <br>
+                    /* Task 3 - Loop through each button in the button array. - Add an event listener for each button that looks for a click event */<br>
+                    for (btn of button) {<br>
+                            btn.addEventListener('click', filterAnimals);<br>
+                        }<br>
+                    <br>
+                    const entry = document.getElementById('search');<br>
+                    <br>
+                    /* Task 5 - Add a keyup event to the search box*/<br>
+                    entry.addEventListener('keyup', function (event) {<br>
+                        event.preventDefault();<br>
+                        filterAnimals();<br>
+                    })<br>
+                    <br>
+                    /* Task 3 - Grab the animal attribute with animal = this.getAttribute("animal"); */<br>
+                    function filterAnimals () { <br>
+                        // animal = this.getAttribute("animal");<br>
+                        // console.log(animal);<br>
+                        <br>
+                        // // To be able to complete this evenings class we need a different approach:<br>
+                        // console.log(document.querySelector('input[name="animalType"]:checked').value);<br>
+                        <br>
+                        /* Task 4 - Loop through each item in the images array */<br>
+                        for (image of images) {<br>
+                            let animalType = image.getAttribute("animal");<br>
+                            let selectedAnimal = document.querySelector('input[name="animalType"]:checked').value;<br>
+                            <br>
+                            /* Task 4 - If animal = all change all of the containers to display:block - If animal = “tiger” then if the container contains the class tiger display:block otherwise display:none*/<br>
+                            if (animalType == selectedAnimal || selectedAnimal == 'all') {<br>
+                                // image.classList.remove('hidden');<br>
+                                image.style.display = 'block';<br>
+                                /* Task 5 - The text entered should be used to filter based on the image alt attribute (or use the src attribute if you have no alts) - The selected filter button should also be taken into account*/<br>
+                                let searchTerm = entry.value.toLowerCase();<br>
+                                let imgDesc = image.getAttribute('alt').toLowerCase();<br>
+                                if (imgDesc.includes(searchTerm)) {<br>
+                                    // image.classList.remove('hidden')<br>
+                                    image.style.display = 'block';<br>
+                                } else {<br>
+                                    // image.classList.add('hidden')<br>
+                                    image.style.display = 'none';<br>
+                                }<br>
+                            } else {<br>
+                                // image.classList.add('hidden');<br>
+                                image.style.display = 'none';<br>
+                            }<br>
+                        }<br>
+                    }<br>
+                </samp>
+
+                <h6 id="task6">Task 6</h6>
+                <ol>
+                    <li>Add CSS classes that show which filter is currently selected by adding a border to the clickable element.</li>
+                    <li>Add some helper text above the images that says something like “showing animals that match the search “{searchString}” and the filter {filter}</li>
+                </ol>
+                <samp>
+                    <h6><strong>CSS</strong></h6>
+                    /* Task 6 - Add CSS classes that show which filter is currently selected by adding a border to the clickable element.*/<br>
+                    .selected {<br>
+                    border-style: solid;<br>
+                    border-width: 3px;<br>
+                    border-color: orange;<br>
+                    }<br>
+                    <br>
+                    <h6><strong>JavaScript</strong></h6>
+                    /* Task2 - Add a variable const button = document.querySelectorAll(".buttonFilter"); - const images = document.querySelectorAll(".imageFilter");*/<br>
+                    const button = document.querySelectorAll(".buttonFilter");<br>
+                    const images = document.querySelectorAll(".imageFilter");<br>
+                    // const animalRadios = document.getElementsByName('animalType')<br>
+                    const form = document.getElementById('filters');<br>
+                    <br>
+                    /* Task 3 - Loop through each button in the button array. - Add an event listener for each button that looks for a click event */<br>
+                    for (btn of button) {<br>
+                            btn.addEventListener('click', filterAnimals);<br>
+                        }<br>
+                    <br>
+                    /* Task 5 - Add a keyup event to the search box*/<br>
+                    const entry = document.getElementById('search');<br>
+                    <br>
+                    entry.addEventListener('keyup', function (event) {<br>
+                        event.preventDefault();<br>
+                        filterAnimals();<br>
+                    })<br>
+                    <br>
+                    /* Task 3 - Grab the animal attribute with animal = this.getAttribute("animal"); */<br>
+                    function filterAnimals () { <br>
+                        // animal = this.getAttribute("animal");<br>
+                        // console.log(animal);<br>
+                        <br>
+                        // // To be able to complete this evenings class we need a different approach:<br>
+                        // console.log(document.querySelector('input[name="animalType"]:checked').value);<br>
+                        let selectedAnimal = document.querySelector('input[name="animalType"]:checked').value;<br>
+                        <br>
+                        /* Task 4 - Loop through each item in the images array */<br>
+                        for (image of images) {<br>
+                            let animalType = image.getAttribute("animal");<br>
+                            let searchTerm = entry.value.toLowerCase();<br>
+                            /*Task 6 - Add some helper text above the images that says something like “showing animals that match the search “{searchString}” and the filter {filter}*/<br>
+                            document.getElementById('summary').innerHTML = `Showing animals that match the search "${searchTerm}" and the filter "${selectedAnimal}"`;<br>
+                            <br>
+                            /* Task 4 - If animal = all change all of the containers to display:block - If animal = “tiger” then if the container contains the class tiger display:block otherwise display:none*/<br>
+                            if (animalType == selectedAnimal || selectedAnimal == 'all') {<br>
+                                // image.classList.remove('hidden');<br>
+                                image.style.display = 'block';<br>
+                                let imgDesc = image.getAttribute('alt').toLowerCase();<br>
+                                /* Task 5 - The text entered should be used to filter based on the image alt attribute (or use the src attribute if you have no alts) - The selected filter button should also be taken into account*/<br>
+                                if (imgDesc.includes(searchTerm)) {<br>
+                                    // image.classList.remove('hidden')<br>
+                                    image.style.display = 'block';<br>
+                                } else {<br>
+                                    // image.classList.add('hidden')<br>
+                                    image.style.display = 'none';<br>
+                                }<br>
+                            } else {<br>
+                                // image.classList.add('hidden');<br>
+                                image.style.display = 'none';<br>
+                            }<br>
+                        }<br>
+                        selected();<br>
+                    }<br>
+                    <br>
+                    /* Function to - Task 6 - Add CSS classes that show which filter is currently selected by adding a border to the clickable element.*/<br>
+                    function selected () {<br>
+                        // clear selected class from all buttons<br>
+                        for (btn of button) {<br>
+                            form.querySelector(`label[for=${btn.value}]`).classList.remove('selected');<br>
+                            btn.classList.remove('selected')<br>
+                        }<br>
+                        <br>
+                        //add selected class from all buttons<br>
+                        let selectedAnimal = document.querySelector('input[name="animalType"]:checked').value;<br>
+                        checkedBox = form.querySelector(`label[for=${selectedAnimal}]`)<br>
+                        checkedBox.classList.add('selected')<br>
+                        console.log(`checkedBox = ${checkedBox.innerHTML}`)<br>
+                    }<br>
+                </samp>
+            </p>
+            <p>GitHub repository: <a href="https://github.com/forbesfive/The-DOM-Practical-Tasks.git" target="-blank">The-DOM-Practical-Tasks</a></p>
+    </section>
+
+    <div class="container" id="foot">
+      <footer>
+        <div>
+            <a class="foot-link" href="../form">Contact Me</a>
+        </div>
+        <small>&copy; 2023 My Website</small>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
